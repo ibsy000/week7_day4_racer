@@ -39,7 +39,7 @@ dynamically populate the data when a "season" and "round" are specified within y
     function buildRacerTable(racerObj){
         // Create a table
         let table = document.createElement('table')
-        table.className = 'table'
+        table.className = 'table table-hover table-dark table-striped mt-5'
 
         // Create table head
         let tHead = document.createElement('thead')

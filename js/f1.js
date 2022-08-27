@@ -51,17 +51,13 @@ dynamically populate the data when a "season" and "round" are specified within y
 
         // Create table row headers which should include info from racerObj
         // Create funtion to loop through table row headers and insert to innerHTML
-        let headers = []
+        let headers = ['Position', 'Driver', 'Constructors', 'Points', 'Wins'] // Hard code in categories
         function addHeaders(){
-            for (let i in racerObj[0]){
-                headers.push(i)
-            }
-            headers.splice(1,1)
             for (let header of headers){
                 let th = document.createElement('th')
                 th.scope = 'col'
                 tr.append(th)
-                th.innerHTML = (header[0].toUpperCase() + header.slice(1))
+                th.innerHTML = header
             } 
         }
         addHeaders()
@@ -77,7 +73,7 @@ dynamically populate the data when a "season" and "round" are specified within y
             
             for (let header of headers){
                 let td = document.createElement('td')
-                td.innerHTML = obj[header]
+                td.innerHTML = obj[header.toLowerCase()]
 
                 if (header === 'Driver'){
                     td.innerHTML = obj[header]['givenName'] + ' ' + obj[header]['familyName']
